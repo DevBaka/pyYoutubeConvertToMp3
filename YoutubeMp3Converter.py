@@ -1,9 +1,12 @@
 from __future__ import unicode_literals
 import youtube_dl
 
+#'outtmpl': '%(playlist)s/%(uploader)s/%(playlist_index)s - %(title)s.%(ext)s',
 def dlLink(link):
     ydl_opts = {
         'format': 'bestaudio/best',
+        'download_archive': 'downloaded_songs.txt',
+        'outtmpl': '%(playlist)s/%(title)s.%(ext)s',
         'postprocessors': [{
             'key': 'FFmpegExtractAudio',
             'preferredcodec': 'mp3',
