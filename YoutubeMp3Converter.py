@@ -38,7 +38,7 @@ help()
 links = []
 link = ""
 while link != "exit":
-    link = input("insert link or type 'exit' to exit the programm")
+    link = raw_input("insert link or type 'exit' to exit the programm")
     if link == "start" or link == "go" or link == "mp3" or link == "music":
         dlMusic(links)
     if link == "video" or link == "mp4":
