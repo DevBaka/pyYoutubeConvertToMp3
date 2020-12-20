@@ -7,6 +7,7 @@ def dlMusic(links):
         'format': 'bestaudio/best',
         'download_archive': 'downloaded_songs.txt',
         'outtmpl': 'music/%(playlist)s/%(title)s.%(ext)s',
+        'ignoreerrors': True,
         'postprocessors': [{
             'key': 'FFmpegExtractAudio',
             'preferredcodec': 'mp3',
@@ -21,7 +22,8 @@ def dlMusic(links):
 
 def dlVideos(links):
     ydl_opts = {
-        'outtmpl' : 'videos/%(playlist)s/%(title)s.%(ext)s'
+        'outtmpl' : 'videos/%(playlist)s/%(title)s.%(ext)s',
+        'ignoreerrors': True
     }
     for x in links:
         print(x)
@@ -38,7 +40,7 @@ help()
 links = []
 link = ""
 while link != "exit":
-    link = raw_input("insert link or type 'exit' to exit the programm")
+    link = input("insert link or type 'exit' to exit the programm")
     if link == "start" or link == "go" or link == "mp3" or link == "music":
         dlMusic(links)
     if link == "video" or link == "mp4":
